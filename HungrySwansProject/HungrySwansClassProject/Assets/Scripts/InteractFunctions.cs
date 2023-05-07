@@ -18,6 +18,6 @@ public class InteractFunctions : MonoBehaviour, IInteractable
 
     public void interact()
     {
-
+        
     }
 }

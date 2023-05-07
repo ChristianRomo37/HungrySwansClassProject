@@ -26,7 +26,7 @@ public class playerController : MonoBehaviour, IDamage
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private bool isSprinting;
-    //private bool isShooting;
+    private bool isShooting;
     private int HPOrig;
 
     private void Start()
