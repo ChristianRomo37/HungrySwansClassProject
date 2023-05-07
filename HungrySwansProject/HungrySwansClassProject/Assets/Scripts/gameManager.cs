@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
     [Header("----- Player Stuff -----")]
     public GameObject player;
     public playerController playerScript;
-    public GameObject playerSpawnPos;
+    //public GameObject playerSpawnPos;
 
     [Header("----- UI Stuff -----")]
     public GameObject activeMenu;
@@ -29,7 +29,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
 
         timeScaleOrig = Time.timeScale;
-        playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
+        //playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
 
     }
 

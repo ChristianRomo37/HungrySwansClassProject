@@ -26,7 +26,7 @@ public class playerController : MonoBehaviour, IDamage
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private bool isSprinting;
-    private bool isShooting;
+    //private bool isShooting;
     private int HPOrig;
 
     private void Start()
@@ -39,17 +39,16 @@ public class playerController : MonoBehaviour, IDamage
     {
 
 
-        //if (gameManager.instance.activeMenu == null)
-        //{
-            movement();
+        
             
             if (Input.GetButton("Shoot") && !isShooting)
             {
                 StartCoroutine(shoot());
             }
 
+
             sprint();
-        //}
+        
     }
 
     void movement()
@@ -94,7 +93,7 @@ public class playerController : MonoBehaviour, IDamage
 
     IEnumerator shoot()
     {
-        isShooting = true;
+        //isShooting = true;
 
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
@@ -109,7 +108,7 @@ public class playerController : MonoBehaviour, IDamage
 
         yield return new WaitForSeconds(shootRate);
 
-        isShooting = false;
+        //isShooting = false;
     }
     public void takeDamage(int amount)
     {
@@ -121,15 +120,17 @@ public class playerController : MonoBehaviour, IDamage
         //}
     }
 
-    //public void spawn()
-    //{
-    //    controller.enabled = false;
-    //    transform.position = gameManager.instance.playerSpawnPos.transform.position;
-    //    controller.enabled = true;
-    //    HP = HPOrig;
-    //}
-    //public void playerHeal(int amount)
-    //{
-    //    HP += amount;
-    //}
+
+    public void spawn()
+    {
+        controller.enabled = false;
+        ///transform.position = gameManager.instance.playerSpawnPos.transform.position;
+        controller.enabled = true;
+        HP = HPOrig;
+    }
+    public void playerHeal(int amount)
+    {
+        HP += amount;
+    }
+
 }
