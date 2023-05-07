@@ -32,24 +32,24 @@ public class playerController : MonoBehaviour, IDamage
     private void Start()
     {
         HPOrig = HP;
-        spawn();
+        //spawn();
     }
 
     void Update()
     {
-        sprint();
 
 
-        if (gameManager.instance.activeMenu == null)
-        {
+        //if (gameManager.instance.activeMenu == null)
+        //{
             movement();
-
+            
             if (Input.GetButton("Shoot") && !isShooting)
             {
                 StartCoroutine(shoot());
             }
 
-        }
+            sprint();
+        //}
     }
 
     void movement()
@@ -115,21 +115,21 @@ public class playerController : MonoBehaviour, IDamage
     {
         HP -= amount;
 
-        if (HP <= 0)
-        {
-            gameManager.instance.loseState();
-        }
+        //if (HP <= 0)
+        //{
+        //    gameManager.instance.loseState();
+        //}
     }
 
-    public void spawn()
-    {
-        controller.enabled = false;
-        transform.position = gameManager.instance.playerSpawnPos.transform.position;
-        controller.enabled = true;
-        HP = HPOrig;
-    }
-    public void playerHeal(int amount)
-    {
-        HP += amount;
-    }
+    //public void spawn()
+    //{
+    //    controller.enabled = false;
+    //    transform.position = gameManager.instance.playerSpawnPos.transform.position;
+    //    controller.enabled = true;
+    //    HP = HPOrig;
+    //}
+    //public void playerHeal(int amount)
+    //{
+    //    HP += amount;
+    //}
 }
