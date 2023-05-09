@@ -17,6 +17,7 @@ public class gameManager : MonoBehaviour
     public GameObject activeMenu;
     public GameObject pauseMenu;
     public GameObject loseMenu;
+    public GameObject winMenu;
 
     public bool isPaused;
     float timeScaleOrig;
